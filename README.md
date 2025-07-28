@@ -2,7 +2,7 @@
 
 ## Projeto People Analytics - RH - Pt1
 
-Neste projeto foi realizada as seguintes etapas:
+Neste projeto foram realizadas as seguintes etapas:
 
 1- Análise Exploratória de Dados (EDA), buscando entender as variáveis em relação a taxa de rotatividade;
 
