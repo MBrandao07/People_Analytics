@@ -1,6 +1,6 @@
 # People_Analytics
 
-## Projeto People Analytics - RH - Pt1
+## Projeto People Analytics - RH - Clusterização Funcionários
 
 Neste projeto foram realizadas as seguintes etapas:
 
