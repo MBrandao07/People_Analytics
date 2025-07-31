@@ -75,8 +75,9 @@ Temos também o dicionário de dados explicando cada coluna:
 | AnosComAtualGestor             | Anos trabalhando com o gestor atual                                       |                                                               |
 
 
+## Desenvolvimento dos projetos
 
-## Projeto People Analytics - RH - Clusterização Funcionários
+### Projeto People Analytics - RH - Clusterização Funcionários
 
 Neste projeto foram realizadas as seguintes etapas:
 
