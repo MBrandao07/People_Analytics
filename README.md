@@ -1,6 +1,4 @@
-# People_Analytics
-
-## Entendimento do Negócio
+# Entendimento do Negócio
 
 A RetaiX emprega cerca de 4000 funcionários. No entanto, todos os anos, cerca de 15% de seus funcionários deixam a empresa e precisam ser substituídos por novos funcionários que estão disponíveis no mercado. A gestão acredita que esse nível de rotatividade (funcionários saindo, seja por vontade própria ou porque foram demitidos) é ruim para a empresa, pelos seguintes motivos:
 
@@ -28,7 +26,7 @@ Neste momento, focaremos no Projeto de RH com os seguintes objetivos:
 
 - Gerar um relatório com as conclusões para que o gestor do RH possa tomar as devidas providências para que a rotatividade seja reduzida.
 
-## Entendimento dos Dados
+# Entendimento dos Dados
 
 Temos as seguintes bases disponíveis e seus respectivos conceitos:
 
@@ -75,9 +73,9 @@ Temos também o dicionário de dados explicando cada coluna:
 | AnosComAtualGestor             | Anos trabalhando com o gestor atual                                       |                                                               |
 
 
-## Desenvolvimento dos projetos
+# Desenvolvimento dos projetos
 
-### Projeto People Analytics - RH - Clusterização Funcionários
+## Projeto People Analytics - RH - Clusterização Funcionários
 
 Neste projeto foram realizadas as seguintes etapas:
 
@@ -92,3 +90,65 @@ Neste projeto foram realizadas as seguintes etapas:
 5- Análise exploratória das variáveis em cada um dos clusters obtidos;
 
 6- Considerações finais e Recomendações para o Negócio.
+
+
+## Projeto People Analytics - RH - Modelo Regressão Logística
+
+Neste projeto foram realizadas as seguintes etapas:
+
+1- Análise de todas as categorias de cada variável X Taxa de rotatividade;
+
+2- Verificação a distribuição de cada variável numérica diferenciando indivíduos com target = 0 e target = 1;
+
+3- Divisão dos dados entre treino e teste, sendo 70% para treino e 30% para teste;
+
+4- Preenchimento dos nulos pela média em variáveis numéricas e a moda em variáveis categóricas;
+
+5- Verificação a linearidade com o Log Odds (R²>0,85);
+
+6- Transformação as variáveis não lineares;
+
+7- Categorização das variáveis que ainda não ficaram lineares;
+
+8- Modelagem utilizando Regressão Logística do StatsModels por ser altamente explicativa para o negócio;
+
+9- Avaliação do modelo utilizando as métricas AUC, KS e Gini;
+
+10- Conclusão, Impacto no Negócio e Recomendações.
+
+
+
+# Conclusão, Impacto no Negócio e Recomendações
+
+## Conclusão
+
+O modelo de Regressão Logística construído demonstrou bom desempenho tanto no conjunto de treino quanto no conjunto de teste, com AUC de 0.74 (treino) e 0.73 (teste), o que indica boa capacidade discriminativa. Em outras palavras, o modelo consegue diferenciar corretamente funcionários com maior e menor probabilidade de deixar a empresa.
+
+Além disso: • O KS (Kolmogorov-Smirnov) acima de 0.39 em ambos os conjuntos sugere uma separação clara entre as distribuições das classes (sair vs. permanecer). • O coeficiente de Gini em torno de 0.47 reforça a estabilidade e o poder preditivo do modelo.
+
+O gráfico de decil mostra uma boa monotonicidade: à medida que os decis aumentam, a taxa de saída (“event rate”) também aumenta, tanto no treino quanto no teste. Isso indica que o modelo está bem calibrado e que os scores gerados refletem o risco real de saída de forma coerente.
+
+## Impactos no negócio
+
+- **Redução da rotatividade previsível** - O modelo permite antecipar quais funcionários têm maior chance de deixar a empresa, possibilitando ações preventivas como conversas de retenção, ajustes de clima ou benefícios direcionados.
+
+- **Melhoria na alocação de recursos de RH** - A equipe de RH pode focar esforços nos grupos de maior risco, tornando as ações de engajamento mais eficazes.
+
+- **Planejamento de sucessão mais estratégico** - Com a previsão de possíveis desligamentos, líderes podem se preparar com antecedência, organizando treinamentos internos ou abrindo vagas externas de forma planejada.
+
+- **Redução de custos com contratação e onboarding** - Antecipar e mitigar saídas evita gastos com recrutamento, integração e queda de produtividade associada a perdas inesperadas.
+
+- **Base para políticas de retenção orientadas por dados** - O modelo pode ser utilizado continuamente para avaliar a efetividade de iniciativas de retenção, ajustando políticas com base em evidências concretas.
+
+
+## Recomendações
+
+- **Desenvolver planos de retenção direcionados** - Crie ações específicas para os funcionários que o modelo identifica como de alto risco. Isso pode incluir bônus de retenção, planos de carreira acelerados, programas de reconhecimento e acompanhamento individual com líderes.
+
+- **Revisar políticas internas com base em dados** - Use os insights do modelo para revisar políticas de carga horária, promoções, salários, clima e benefícios.
+
+- **Atuar preventivamente nos grupos de risco** - Com base na pontuação do modelo, classifique os funcionários em faixas de risco e defina protocolos para cada grupo. Exemplo: acompanhamento trimestral para risco médio e ações imediatas para risco alto.
+
+- **Melhorar a experiência de integração e acompanhamento** - Funcionários recém-contratados com alto risco previsto devem receber um onboarding reforçado e acompanhamento próximo nos primeiros meses.
+
+- **Transformar a rotatividade em KPI gerencial** - Incorpore a probabilidade de saída como uma métrica acompanhada periodicamente pelas lideranças, associando metas de retenção aos objetivos dos gestores.
